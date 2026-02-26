@@ -15,8 +15,8 @@ function App() {
   return (
     <div className="container">
       <div className="glass-card">
-        <h1 className="title">エドラのウェブサイト</h1>
-        <p className="subtitle">Personal Dashboard & Portfolio</p>
+        <h1 className="title">エドラ</h1>
+        <p className="subtitle">Hanya gabut & Nganggur :v</p>
 
         <div className="input-group">
           <input
@@ -45,7 +45,7 @@ function App() {
             <button className="btn-social saweria">Saweria</button>
           </a>
           <a href="https://lpkindonesianipponanugerah.co.id/" target="_blank" rel="noreferrer">
-            <button className="btn-social lpk">LPK Saya</button>
+            <button className="btn-social lpk">LPK Guwa</button>
           </a>
         </div>
       </div>
