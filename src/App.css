@@ -9,15 +9,17 @@
 }
 
 .container {
-  min-height: 100vh;
+  min-height: 100vh; /* Minimal setinggi layar */
+  height: auto; /* Biar bisa nambah tinggi kalau kontennya banyak */
+  overflow-y: auto; /* INI KUNCINYA: Biar bisa scroll ke bawah */
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Biar kontennya urut ke bawah */
   align-items: center;
-  /* Ganti link Unsplash lama lo sama file nissan ini */
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/bg-nissan.jpg');
+  padding: 20px;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/bg-nissan.jpg');
   background-size: cover;
   background-position: center;
-  padding: 20px;
+  background-attachment: fixed; /* Biar background nissan-nya nggak ikut geser pas di-scroll */
 }
 
 .glass-card {
