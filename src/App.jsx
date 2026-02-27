@@ -42,7 +42,7 @@ function App() {
               <a href="https://wa.me/6285756753691" target="_blank" rel="noreferrer">
                 <button className="btn-social wa">WhatsApp</button>
               </a>
-              <a href="https://instagram.com/draelain.__" target="_blank" rel="noreferrer">
+              <a href="https://instagram.com/draelain._._" target="_blank" rel="noreferrer">
                 <button className="btn-social ig">Instagram</button>
               </a>
               <a href="https://saweria.co/Elainext" target="_blank" rel="noreferrer">
