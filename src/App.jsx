@@ -26,15 +26,6 @@ function App() {
             placeholder="Ada rencana apa hari ini?"
           />
           <button onClick={addTodo} className="btn-add">+</button>
-	<div className="game-container" style={{ marginTop: '20px' }}>
-	  <iframe
-	    src="https://offline-dino-game.firebaseapp.com/"
-	    width="100%"
-	    height="200"
-	    style={{ borderRadius: '15px', border: 'none' }}
-	    title="Dino Game"
-	  ></iframe>
-	</div>
 	</div>
 
         <ul className="todo-list">
@@ -43,6 +34,22 @@ function App() {
           ))}
         </ul>
 
+      {/* DINO GEDE + FIX SCROLL TABLET (Satu Paket) */}
+      <div className="game-container" style={{ 
+        width: '100%', 
+        marginTop: '30px', 
+        marginBottom: '50px',
+        display: 'block',
+        clear: 'both'
+      }}>
+        <iframe 
+          src="https://offline-dino-game.firebaseapp.com/" 
+          width="100%" 
+          height="450" 
+          style={{ borderRadius: '20px', border: 'none', backgroundColor: '#fff' }}
+          title="Dino Game"
+        ></iframe>
+      </div>
         <div className="social-group">
           <a href="https://wa.me/6285756753691" target="_blank" rel="noreferrer">
             <button className="btn-social wa">WhatsApp</button>
