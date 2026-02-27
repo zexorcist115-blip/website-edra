@@ -5,7 +5,6 @@ function App() {
   const [showGame, setShowGame] = useState(false);
   const [time, setTime] = useState(new Date().toLocaleTimeString());
 
-  // Update Jam Digital Dashboard
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date().toLocaleTimeString()), 1000);
     return () => clearInterval(timer);
@@ -13,7 +12,6 @@ function App() {
 
   return (
     <div className="container">
-      {/* Jam Digital ala Dashboard Mobil */}
       <div className="dashboard-clock">{time}</div>
 
       <div className="glass-card">
@@ -22,9 +20,7 @@ function App() {
 
         {!showGame ? (
           <div className="social-group">
-            {/* Tombol Utama */}
             <button className="btn-social game" onClick={() => setShowGame(true)}>🎮 Main Dino</button>
-            
             <a href="https://wa.me/6285756753691" target="_blank" rel="noreferrer">
               <button className="btn-social wa">WhatsApp</button>
             </a>
@@ -41,28 +37,17 @@ function App() {
         ) : (
           <div className="game-screen">
             <button className="btn-back" onClick={() => setShowGame(false)}>⬅ Kembali ke Home</button>
-            <iframe 
-              src="https://offline-dino-game.firebaseapp.com/" 
-              width="100%" 
-              height="450" 
-              style={{ borderRadius: '15px', border: 'none', backgroundColor: '#fff' }}
-              title="Dino Game"
-            ></iframe>
+            <iframe src="https://offline-dino-game.firebaseapp.com/" width="100%" height="450" style={{ borderRadius: '15px', border: 'none', backgroundColor: '#fff' }} title="Dino Game"></iframe>
           </div>
         )}
       </div>
 
-      {/* Music Player NFSU2 (Riders on the Storm) */}
       <div className="music-player">
-        <p>🎵 NFSU2 - Riders on the Storm</p>
-        <iframe 
-          width="100%" 
-          height="20" 
-          scrolling="no" 
-          frameborder="no" 
-          allow="autoplay" 
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/175730302&color=%23ff4757&inverse=true&auto_play=true&show_user=false"
-        ></iframe>
+        <p>🎵 Riders on the Storm</p>
+        <audio controls loop style={{height: '35px', width: '240px'}}>
+          <source src="/musik.mp3" type="audio/mpeg" />
+          Browser lo gak support audio.
+        </audio>
       </div>
     </div>
   );
