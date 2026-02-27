@@ -26,7 +26,15 @@ function App() {
             placeholder="Ada rencana apa hari ini?"
           />
           <button onClick={addTodo} className="btn-add">+</button>
-        </div>
+	<div className="game-container" style={{ marginTop: '20px' }}>
+	  <iframe
+	    src="https://offline-dino-game.firebaseapp.com/"
+	    width="100%"
+	    height="200"
+	    style={{ borderRadius: '15px', border: 'none' }}
+	    title="Dino Game"
+	  ></iframe>
+	</div>
 
         <ul className="todo-list">
           {todos.map((todo, index) => (

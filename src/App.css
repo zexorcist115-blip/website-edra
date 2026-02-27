@@ -13,9 +13,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Pakai background gambar estetik dari Unsplash */
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-              url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop');
+  /* Ganti link Unsplash lama lo sama file nissan ini */
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/bg-nissan.jpg');
   background-size: cover;
   background-position: center;
   padding: 20px;
