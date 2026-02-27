@@ -6,11 +6,12 @@
   justify-content: center;
   align-items: center;
   padding: 40px 20px;
+  /* PAKAI JPG NYA BOS, JANGAN POLOSAN */
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/bg-nissan.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-}
+}.
 
 .glass-card {
   background: rgba(255, 255, 255, 0.1);
