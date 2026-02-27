@@ -6,61 +6,69 @@
   justify-content: center;
   align-items: center;
   padding: 40px 20px;
-  /* PAKAI JPG NYA BOS, JANGAN POLOSAN */
+  /* JANGAN LUPA ADD GAMBARNYA DI FOLDER PUBLIC DENGAN NAMA pg-nissan.jpg */
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/bg-nissan.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-}.
+}
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparan */
+  backdrop-filter: blur(10px); /* Efek buram */
   padding: 30px;
   border-radius: 25px;
   width: 100%;
   max-width: 500px;
   text-align: center;
-  color: white;
-  border: 1px solid rgba(255,255,255,0.2);
+  /* Efek Garis Tepi Mewah */
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.title {
+  color: #ffffff; /* TULISAN EDRA JADI PUTIH TOTAL */
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.subtitle {
+  color: #eeeeee;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
 }
 
 .input-group {
   display: flex;
   gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 input {
   flex: 1;
   padding: 12px;
   border-radius: 10px;
-  border: none;
-  background: rgba(255,255,255,0.2);
-  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  /* Garis tepi untuk input */
+  border: 1px solid rgba(255, 255, 255, 0.2); 
 }
 
 .btn-add {
   padding: 10px 20px;
   border-radius: 10px;
-  border: none;
+  background: transparent;
+  color: #00b894;
+  /* Garis tepi untuk tombol '+' */
+  border: 1px solid #00b894; 
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-add:hover {
   background: #00b894;
   color: white;
-  cursor: pointer;
-}
-
-.todo-list {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 20px;
-}
-
-.todo-item {
-  background: rgba(255,255,255,0.1);
-  padding: 10px;
-  margin-bottom: 5px;
-  border-radius: 8px;
-  text-align: left;
 }
 
 .social-group {
@@ -69,30 +77,28 @@ input {
   gap: 10px;
 }
 
+/* GAYA TOMBOL SANGAR & TRANSPARAN (OUTLINE) */
 .btn-social {
   width: 100%;
   padding: 12px;
   border-radius: 12px;
-  border: none;
+  background: transparent; /* Latar Belakang Transparan */
+  color: #ffffff; /* Semua Tulisan Tombol Putih */
   font-weight: bold;
-  color: white;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  /* Efek Garis Tepi Tipis untuk semua tombol */
+  border: 1px solid rgba(255, 255, 255, 0.2); 
 }
 
-.btn-social.game { background: #ff4757; }
-.btn-social.wa { background: #25d366; }
-.btn-social.ig { background: #e1306c; }
-.btn-social.saweria { background: #fa8231; }
-.btn-social.lpk { background: #3867d6; }
-
-.btn-back {
-  width: 100%;
-  padding: 12px;
-  background: #2f3542;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  margin-bottom: 15px;
-  cursor: pointer;
+/* Efek Hover Agar Keren Saat Disentuh */
+.btn-social:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
+
+/* WARNA KHUSUS GARIS TEPI (HOVER) */
+.btn-social.game:hover { border-color: #ff4757; }
+.btn-social.wa:hover { border-color: #25d366; }
+.btn-social.ig:hover { border-color: #e1306c; }
+.btn-social.saweria:hover { border-color: #fa8231; }
+.btn-social.lpk:hover { border-color: #3867d6; }
