@@ -1,12 +1,12 @@
 .container {
   min-height: 100vh;
   height: auto;
-  overflow-y: auto; /* Buka gembok scroll halaman */
+  overflow-y: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/nissan.jpg');
+  padding: 40px 20px;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/bg-nissan.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -14,45 +14,84 @@
 
 .glass-card {
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   padding: 30px;
-  border-radius: 20px;
+  border-radius: 25px;
   width: 100%;
   max-width: 500px;
   text-align: center;
   color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
+
+.btn-add {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background: #00b894;
+  color: white;
+  cursor: pointer;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.todo-item {
+  background: rgba(255,255,255,0.1);
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  text-align: left;
 }
 
 .social-group {
   display: flex;
-  flex-wrap: wrap; /* Biar tombol nggak lari keluar layar tablet */
+  flex-direction: column;
   gap: 10px;
-  justify-content: center;
-  margin-top: 20px;
 }
 
 .btn-social {
-  padding: 10px 20px;
-  border-radius: 10px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
   border: none;
-  cursor: pointer;
   font-weight: bold;
   color: white;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.btn-social.game {
-  background: #ff4757; /* Warna merah buat tombol game */
-  width: 100%; /* Biar tombol game paling gede */
-  margin-bottom: 10px;
-}
+.btn-social.game { background: #ff4757; }
+.btn-social.wa { background: #25d366; }
+.btn-social.ig { background: #e1306c; }
+.btn-social.saweria { background: #fa8231; }
+.btn-social.lpk { background: #3867d6; }
 
 .btn-back {
+  width: 100%;
+  padding: 12px;
   background: #2f3542;
   color: white;
-  padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  width: 100%;
   border: none;
+  border-radius: 12px;
+  margin-bottom: 15px;
   cursor: pointer;
 }
