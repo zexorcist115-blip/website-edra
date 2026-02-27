@@ -35,6 +35,7 @@ function App() {
 	    title="Dino Game"
 	  ></iframe>
 	</div>
+	</div>
 
         <ul className="todo-list">
           {todos.map((todo, index) => (
@@ -58,7 +59,7 @@ function App() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default App
