@@ -1,72 +1,84 @@
-/* ... kodingan container dll tetap sama ... */
+/* 1. Font Gothic/Punk Style (Import dari Google Fonts atau pake Monospace) */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 .container {
-  min-height: 100vh;
-  height: auto;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/bg-nissan.jpg');
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('/bg-nissan.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  height: 100vh;
+  font-family: 'Share Tech Mono', monospace;
+  color: #ff4d4d; /* Merah Redup Cyber */
 }
 
-.dashboard-clock {
-  color: #ffffff;
-  font-family: 'Courier New', monospace;
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-shadow: 0 0 15px #ff4757;
-}
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(15px);
-  padding: 40px 30px;
-  border-radius: 30px;
+/* 4. Efek Kabut Merah di Bawah */
+.red-fog {
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  max-width: 450px;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  height: 150px;
+  background: linear-gradient(to top, rgba(255, 0, 0, 0.15), transparent);
+  filter: blur(40px);
+  pointer-events: none;
 }
 
-/* Sembunyikan Audio Player tapi tetap bisa bunyi */
-.music-player-mini {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: rgba(0,0,0,0.8);
-  padding: 10px 20px;
-  border-radius: 50px;
-  color: #ffffff;
-  font-size: 0.8rem;
-  border: 1px solid #ff4757;
+/* 1. Jam Main Style */
+.main-clock {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #ff0000;
+  text-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+  letter-spacing: -5px;
+}
+
+/* 2. Status Bar Kiri Atas */
+.status-bar {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.battery-icon {
+  width: 25px;
+  height: 12px;
+  border: 1px solid rgba(255, 0, 0, 0.4);
+  padding: 1px;
+}
+
+.battery-level {
+  height: 100%;
+  background: #ff0000;
+}
+
+/* 3. Cyber Button Style */
+.cyber-btn {
   display: flex;
   align-items: center;
-  gap: 10px;
-  pointer-events: none; /* Biar gak bisa diklik bar-nya */
-}
-
-/* Menghilangkan bar play dan menit */
-audio {
-  display: none; 
-}
-
-/* ... sisanya (btn-social dll) pakai yang lama ... */
-.btn-social {
-  width: 100%;
-  padding: 14px;
-  border-radius: 15px;
-  background: transparent;
-  color: white;
-  font-weight: bold;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  cursor: pointer;
+  padding: 12px 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 0, 0, 0.1);
+  color: #ffffff;
+  margin-bottom: 8px;
   transition: 0.3s;
+  clip-path: polygon(5% 0, 100% 0, 100% 70%, 95% 100%, 0 100%, 0% 30%);
 }
-.btn-social.game { border-color: #ff4757; color: #ff4757; margin-bottom: 10px; }
+
+.title-neon {
+  font-size: 4rem;
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #ff0000;
+}
+
+/* 5. Audio Visualizer Small Bar */
+.v-bar {
+  width: 2px;
+  background: #ff0000;
+  margin: 0 1px;
+}
+
+.security-info {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
