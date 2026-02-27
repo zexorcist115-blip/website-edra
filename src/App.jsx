@@ -5,38 +5,57 @@ function App() {
   const [time, setTime] = useState("");
   const [battery, setBattery] = useState(88);
   const [isGlitching, setIsGlitching] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
 
+  // 1. Logika Jam & Efek Glitch
   useEffect(() => {
-    // 1. Jam Tanpa Detik
     const timer = setInterval(() => {
       const now = new Date();
       setTime(now.getHours().toString().padStart(2, '0') + ":" + 
               now.getMinutes().toString().padStart(2, '0'));
     }, 1000);
 
-    // 2. Efek Glitch 10 Detik Sekali
     const glitchInterval = setInterval(() => {
       setIsGlitching(true);
       setTimeout(() => setIsGlitching(false), 300);
     }, 10000);
 
+    // Ambil status baterai asli jika didukung browser
+    if (navigator.getBattery) {
+      navigator.getBattery().then(bat => setBattery(Math.round(bat.level * 100)));
+    }
+
     return () => { clearInterval(timer); clearInterval(glitchInterval); };
   }, []);
 
+  // 2. Fungsi Sakti Pancingan Audio
+  const startAudio = () => {
+    if (!hasInteracted) {
+      const audio = document.getElementById("bg-audio");
+      audio.play().then(() => {
+        setHasInteracted(true);
+        console.log("Audio Playing!");
+      }).catch(err => console.log("Gagal: ", err));
+    }
+  };
+
   return (
-    <div className="container overflow-hidden relative">
+    <div className="container" onClick={startAudio} onTouchStart={startAudio} onWheel={startAudio}>
+      {/* Efek Kabut Merah Bawah */}
       <div className="red-fog"></div>
 
-      {/* 2. Pojok Kiri Atas: Baterai & Signal */}
+      {/* Pojok Kiri Atas: Baterai & Signal */}
       <div className="status-bar">
         <div className="flex-row">
-          <div className="battery-icon"><div className="battery-level"></div></div>
+          <div className="battery-icon">
+            <div className="battery-level" style={{ width: `${battery}%` }}></div>
+          </div>
           <span>BAT: {battery}%</span>
         </div>
         <div className="signal-text">SIGNAL: MAX</div>
       </div>
 
-      {/* 1. Main Clock Gothic Glitch */}
+      {/* Jam Digital Gothic Glitch */}
       <div className={`main-clock ${isGlitching ? 'glitch' : ''}`}>
         {time || "00:00"}
       </div>
@@ -61,7 +80,7 @@ function App() {
         </div>
       </div>
 
-      {/* 6. Pojok Kanan Bawah: Security & Visualizer */}
+      {/* Pojok Kanan Bawah: Security & Visualizer */}
       <div className="security-info">
         <div className="visualizer">
           <div className="v-bar v1"></div><div className="v-bar v2"></div><div className="v-bar v3"></div>
@@ -70,7 +89,10 @@ function App() {
         <p className="song-text">RIDERS ON THE STORM</p>
       </div>
 
-      <audio autoPlay loop src="/musik.mp3" />
+      {/* Audio Element Tanpa Controls (Sembunyi) */}
+      <audio id="bg-audio" loop>
+        <source src="/musik.mp3" type="audio/mpeg" />
+      </audio>
     </div>
   );
 }
